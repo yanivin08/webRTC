@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-md-12 bg-light">
+                    <h3 class="mt-4"><i class="fab fa-battle-net"></i> Web Real-Time Communications</h3>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead mb-3">Welcome <%= name %></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-right"><%= date %> | <a href="/users/logout">Logout</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">    
+            <a href="/dashboard/session" class="btn btn-primary mb-4">Start Session</a>
+            <% var link; %>
+            <% if(link != undefined){ %>
+                <div class="card">
+                    <div class="card-body">
+                        <input id="btn-input" style="width: 420px"type="text" class="form-control input-sm mb-3" value=" <%=link %> " />
+                        <a href="../sessions<%= link.substring(link.lastIndexOf('/')) %>" class="btn btn-primary btn-sm" id="btn-chat" style="width:70px">Start</a>
+                        <button class="btn btn-warning btn-sm" id="btn-chat" style="width:70px" onclick="copyText(document.getElementById('btn-input'))">Copy</button>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <h5 class="card-header">Active Sessions</h5>
+                <ul class="list-group list-group-flush">
+                    <% var session; %>
+                    <% if(session != undefined){ %>
+                        <% for(var i=0; i<session.length; i++) {%>
+                            <% if(session[i].status == "Open"){ %>
+                            <li class="list-group-item"><a href="sessions/<%= session[i].id %>"><%= session[i].id %></a></li>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function copyText(elem){
+        elem.select();
+        elem.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        elem.blur();
+    }
+</script>
