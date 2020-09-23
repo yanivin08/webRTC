@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: #eee;
+  color:#666;
+}
+#logo{
+    font-size: 200px;
+}
+.login-container{
+  height: 100vh;
+  width: 100%;
+}
+.login-form{
+  margin: auto;
+  width: 370px;
+  padding: 15px;
+  max-width: 100%;
+}
+.login-form .form-control{
+  font-size: 15px;
+  min-height: 48px;
+  font-weight: 500;
+}
+.login-form .logs{
+  text-decoration: none;
+  color:#666;
+}
+.login-form .logs:hover{
+  color:#273bbe;
+}
+.forgot-link{
+  font-size: 13px;
+}
+
+.btn-custom{
+  background: #4155d8;
+  border-color:#273bbe;
+  color:#fff;
+  font-size: 15px;
+  font-weight: 600;
+  min-height: 48px;
+}
+.btn-custom:focus,
+.btn-custom:hover,
+.btn-custom:active,
+.btn-custom:active:focus{
+  background: #273bbe;
+  border-color: #2335a9;
+  color:#fff;
+}
+.btn-custom:focus{
+  box-shadow: 0 0 0 0.2rem rgba(114,61,190,.25);
+}
+.chat-left{
+    margin-left: 60px;
+}
+.chat-right{
+    margin-right: 60px;
+}
+
+.chat-messages{
+  height: 500px;
+  width: 330px;
+  overflow: auto;
+}
